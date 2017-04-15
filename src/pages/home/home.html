@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Flights</h3>
+  <!-- TODO: show login button if logged out -->
+  <!-- TODO: list flights, highlighting 'mine' if logged in -->
+  <!-- TODO: my notifications if loged in -->
+  <ion-list>
+    <button ion-item *ngFor="let flight of flights" (click)="flightTapped(flight)">
+      {{ flight.name }}
+    </button>  
+  </ion-list>
+  
+</ion-content>

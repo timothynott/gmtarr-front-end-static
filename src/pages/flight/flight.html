@@ -10,6 +10,23 @@
 <ion-content padding>
   <h3>{{ flight.name }}</h3>
 <!-- TODO: list matches -->
+  <button ion-button large full clear (click)="toggleGroup(0)">
+    Players
+  </button>
+  <ion-list [hidden]="isGroupHidden(0)">
+    <ion-item ion-item *ngFor="let flightPlayer of flightPlayers">
+      <h2>{{ flightPlayer.name }} ({{ flightPlayer.ntrp }})</h2>
+    </ion-item>
+  </ion-list>
+  <button ion-button large full clear (click)="toggleGroup(1)">
+    Schedule
+  </button>
+  <ion-item-group *ngFor="let group of flightMatchesGrouped" [hidden]="isGroupHidden(1)">
+    <ion-item-divider light>{{group.scheduledDate}}</ion-item-divider>
+    <ion-item ion-item *ngFor="let match of group.matches">
+      <h2><strong>Home:</strong> {{ match.home_player.name }} <strong>Visitor:</strong> {{ match.visitor_player.name }}</h2>
+    </ion-item>
+  </ion-item-group>
 <!-- TODO: show contact info button if logged in (and 'mine'?)-->
 <!-- TODO: show results on match list -->
 <!-- TODO: standings -->

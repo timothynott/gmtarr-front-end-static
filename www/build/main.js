@@ -42729,7 +42729,7 @@ function PanGesture_tsickle_Closure_declarations() {
 /* unused harmony reexport Modal */
 /* unused harmony reexport ModalController */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_123__components_nav_nav__ = __webpack_require__(74);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_123__components_nav_nav__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_123__components_nav_nav__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_124__components_nav_nav_pop__ = __webpack_require__(72);
 /* unused harmony reexport NavPop */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_125__components_nav_nav_pop_anchor__ = __webpack_require__(160);
@@ -42831,7 +42831,7 @@ function PanGesture_tsickle_Closure_declarations() {
 /* unused harmony reexport setupConfig */
 /* unused harmony reexport ConfigToken */
 /* unused harmony reexport DomController */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_22__platform_platform__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_22__platform_platform__["a"]; });
 /* unused harmony reexport setupPlatform */
 /* unused harmony reexport Haptic */
 /* unused harmony reexport DeepLinker */
@@ -42842,7 +42842,7 @@ function PanGesture_tsickle_Closure_declarations() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_171__navigation_nav_controller_base__ = __webpack_require__(48);
 /* unused harmony reexport NavControllerBase */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_172__navigation_nav_params__ = __webpack_require__(20);
-/* unused harmony reexport NavParams */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_172__navigation_nav_params__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_173__navigation_nav_util__ = __webpack_require__(25);
 /* unused harmony reexport DeepLinkMetadata */
 /* unused harmony reexport DeepLinkMetadataFactory */
@@ -57181,12 +57181,11 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/timothynott/Documents/code/Pedantech/round-robin-frontend/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h3>Flights</h3>\n  <!-- TODO: show login button if logged out -->\n  <!-- TODO: list flights, highlighting \'mine\' if logged in -->\n  <!-- TODO: my notifications if loged in -->\n  <ion-list>\n    <button ion-item *ngFor="let flight of flights" (click)="flightTapped(flight)">\n      {{ flight.name }}\n    </button>  \n  </ion-list>\n  \n</ion-content>\n'/*ion-inline-end:"/Users/timothynott/Documents/code/Pedantech/round-robin-frontend/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/timothynott/Documents/code/Pedantech/round-robin-frontend/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h3>Flights</h3>\n  <!-- TODO: show login button if logged out -->\n  <!-- TODO: list flights, highlighting \'mine\' if logged in -->\n  <!-- TODO: my notifications if loged in -->\n  <ion-list>\n    <button ion-item *ngFor="let flight of flights" (click)="flightTapped($event, flight)">\n      {{ flight.name }}\n    </button>  \n  </ion-list>\n  \n</ion-content>\n'/*ion-inline-end:"/Users/timothynott/Documents/code/Pedantech/round-robin-frontend/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], HomePage);
 
-var _a;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
@@ -104455,16 +104454,15 @@ var MyApp = (function () {
     return MyApp;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["N" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]) === "function" && _a || Object)
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["N" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({template:/*ion-inline-start:"/Users/timothynott/Documents/code/Pedantech/round-robin-frontend/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>GMTA Round Robin</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/timothynott/Documents/code/Pedantech/round-robin-frontend/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
 
-var _a, _b, _c, _d;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -114144,19 +114142,1093 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var FlightPage = (function () {
-    function FlightPage(navCtrl) {
+    function FlightPage(navCtrl, navParams) {
+        var _this = this;
         this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.hiddenGroups = [false, false];
+        this.flight = navParams.get('flight');
+        this.flightMatchesGrouped = [];
+        this.getFlightMatches(this.flight.id).then(function (data) {
+            _this.flightMatches = data;
+            _this.groupFlightMatches();
+        });
+        this.getFlightPlayers(this.flight.id).then(function (data) {
+            _this.flightPlayers = data;
+        });
     }
+    FlightPage.prototype.toggleGroup = function (group) {
+        if (this.isGroupHidden(group)) {
+            this.hiddenGroups[group] = false;
+        }
+        else {
+            this.hiddenGroups[group] = true;
+        }
+    };
+    ;
+    FlightPage.prototype.isGroupHidden = function (group) {
+        console.log(this.hiddenGroups[group]);
+        return (this.hiddenGroups[group] === true);
+    };
+    ;
+    FlightPage.prototype.getFlightPlayers = function (id) {
+        //https://roundrobin.gmtatennis.org/api/flights/1/players
+        return new Promise(function (resolve, reject) {
+            var data = [
+                {
+                    "id": 1,
+                    "name": "Amy Bishop",
+                    "gender": "female",
+                    "ntrp": "3.0",
+                    "flight": 1,
+                    "league": 1
+                },
+                {
+                    "id": 8,
+                    "name": "Laurie Dischler",
+                    "gender": "female",
+                    "ntrp": "3.0",
+                    "flight": 1,
+                    "league": 1
+                },
+                {
+                    "id": 25,
+                    "name": "Dami Ko",
+                    "gender": "female",
+                    "ntrp": "3.0",
+                    "flight": 1,
+                    "league": 1
+                },
+                {
+                    "id": 36,
+                    "name": "Bo Hee Min",
+                    "gender": "female",
+                    "ntrp": "3.0",
+                    "flight": 1,
+                    "league": 1
+                },
+                {
+                    "id": 37,
+                    "name": "Maribeth Mohr",
+                    "gender": "female",
+                    "ntrp": "3.0",
+                    "flight": 1,
+                    "league": 1
+                },
+                {
+                    "id": 41,
+                    "name": "Kathleen O'Connell",
+                    "gender": "female",
+                    "ntrp": "3.0",
+                    "flight": 1,
+                    "league": 1
+                },
+                {
+                    "id": 45,
+                    "name": "Sunghee Pak",
+                    "gender": "female",
+                    "ntrp": "3.0",
+                    "flight": 1,
+                    "league": 1
+                },
+                {
+                    "id": 57,
+                    "name": "Vicki Wildes",
+                    "gender": "female",
+                    "ntrp": "3.0",
+                    "flight": 1,
+                    "league": 1
+                }
+            ];
+            resolve(data);
+        });
+    };
+    FlightPage.prototype.groupFlightMatches = function () {
+        var _this = this;
+        var currDate = '';
+        var currMatches = [];
+        this.flightMatches.forEach(function (value, index) {
+            if (value.scheduled_date != currDate) {
+                currDate = value.scheduled_date;
+                var newGroup = {
+                    scheduledDate: value.scheduled_date,
+                    matches: []
+                };
+                currMatches = newGroup.matches;
+                _this.flightMatchesGrouped.push(newGroup);
+            }
+            currMatches.push(value);
+        });
+    };
+    FlightPage.prototype.getFlightMatches = function (id) {
+        //https://roundrobin.gmtatennis.org/api/flights/1/matches
+        return new Promise(function (resolve, reject) {
+            resolve([
+                {
+                    "id": 1,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 57,
+                        "name": "Vicki Wildes",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 1,
+                        "name": "Amy Bishop",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-04-17",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 2,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 45,
+                        "name": "Sunghee Pak",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 8,
+                        "name": "Laurie Dischler",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-04-17",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 3,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 41,
+                        "name": "Kathleen O'Connell",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 25,
+                        "name": "Dami Ko",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-04-17",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 4,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 37,
+                        "name": "Maribeth Mohr",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 36,
+                        "name": "Bo Hee Min",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-04-17",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 5,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 37,
+                        "name": "Maribeth Mohr",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 57,
+                        "name": "Vicki Wildes",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-04-24",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 6,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 36,
+                        "name": "Bo Hee Min",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 41,
+                        "name": "Kathleen O'Connell",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-04-24",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 7,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 25,
+                        "name": "Dami Ko",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 45,
+                        "name": "Sunghee Pak",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-04-24",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 8,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 8,
+                        "name": "Laurie Dischler",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 1,
+                        "name": "Amy Bishop",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-04-24",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 9,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 57,
+                        "name": "Vicki Wildes",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 8,
+                        "name": "Laurie Dischler",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-01",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 10,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 1,
+                        "name": "Amy Bishop",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 25,
+                        "name": "Dami Ko",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-01",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 11,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 45,
+                        "name": "Sunghee Pak",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 36,
+                        "name": "Bo Hee Min",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-01",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 12,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 41,
+                        "name": "Kathleen O'Connell",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 37,
+                        "name": "Maribeth Mohr",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-01",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 13,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 41,
+                        "name": "Kathleen O'Connell",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 57,
+                        "name": "Vicki Wildes",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-08",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 14,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 37,
+                        "name": "Maribeth Mohr",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 45,
+                        "name": "Sunghee Pak",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-08",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 15,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 36,
+                        "name": "Bo Hee Min",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 1,
+                        "name": "Amy Bishop",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-08",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 16,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 25,
+                        "name": "Dami Ko",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 8,
+                        "name": "Laurie Dischler",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-08",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 17,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 57,
+                        "name": "Vicki Wildes",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 25,
+                        "name": "Dami Ko",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-15",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 18,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 8,
+                        "name": "Laurie Dischler",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 36,
+                        "name": "Bo Hee Min",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-15",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 19,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 1,
+                        "name": "Amy Bishop",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 37,
+                        "name": "Maribeth Mohr",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-15",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 20,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 45,
+                        "name": "Sunghee Pak",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 41,
+                        "name": "Kathleen O'Connell",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-15",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 21,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 45,
+                        "name": "Sunghee Pak",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 57,
+                        "name": "Vicki Wildes",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-22",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 22,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 41,
+                        "name": "Kathleen O'Connell",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 1,
+                        "name": "Amy Bishop",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-22",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 23,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 37,
+                        "name": "Maribeth Mohr",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 8,
+                        "name": "Laurie Dischler",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-22",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 24,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 36,
+                        "name": "Bo Hee Min",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 25,
+                        "name": "Dami Ko",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-22",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 25,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 57,
+                        "name": "Vicki Wildes",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 36,
+                        "name": "Bo Hee Min",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-29",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 26,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 25,
+                        "name": "Dami Ko",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 37,
+                        "name": "Maribeth Mohr",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-29",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 27,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 8,
+                        "name": "Laurie Dischler",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 41,
+                        "name": "Kathleen O'Connell",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-29",
+                    "played_date": null,
+                    "entry_date": null
+                },
+                {
+                    "id": 28,
+                    "flight": {
+                        "id": 1,
+                        "league": 1,
+                        "name": "3.0 Women",
+                        "year": 2017,
+                        "ntrp": "3.0",
+                        "start_date": "2017-04-17"
+                    },
+                    "year": 2017,
+                    "status": null,
+                    "home_player": {
+                        "id": 1,
+                        "name": "Amy Bishop",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "visitor_player": {
+                        "id": 45,
+                        "name": "Sunghee Pak",
+                        "gender": "female",
+                        "ntrp": "3.0",
+                        "flight": 1,
+                        "league": 1
+                    },
+                    "score": null,
+                    "winner": null,
+                    "scheduled_date": "2017-05-29",
+                    "played_date": null,
+                    "entry_date": null
+                }
+            ]);
+        });
+    };
     return FlightPage;
 }());
 FlightPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: "page-flight",template:/*ion-inline-start:"/Users/timothynott/Documents/code/Pedantech/round-robin-frontend/src/pages/flight/flight.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h3>{{ flight.name }}</h3>\n<!-- TODO: list matches -->\n<!-- TODO: show contact info button if logged in (and \'mine\'?)-->\n<!-- TODO: show results on match list -->\n<!-- TODO: standings -->\n<!-- TODO: score entry button -->\n</ion-content>'/*ion-inline-end:"/Users/timothynott/Documents/code/Pedantech/round-robin-frontend/src/pages/flight/flight.html"*/
+        selector: "page-flight",template:/*ion-inline-start:"/Users/timothynott/Documents/code/Pedantech/round-robin-frontend/src/pages/flight/flight.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h3>{{ flight.name }}</h3>\n<!-- TODO: list matches -->\n  <button ion-button large full clear (click)="toggleGroup(0)">\n    Players\n  </button>\n  <ion-list [hidden]="isGroupHidden(0)">\n    <ion-item ion-item *ngFor="let flightPlayer of flightPlayers">\n      <h2>{{ flightPlayer.name }} ({{ flightPlayer.ntrp }})</h2>\n    </ion-item>\n  </ion-list>\n  <button ion-button large full clear (click)="toggleGroup(1)">\n    Schedule\n  </button>\n  <ion-item-group *ngFor="let group of flightMatchesGrouped" [hidden]="isGroupHidden(1)">\n    <ion-item-divider light>{{group.scheduledDate}}</ion-item-divider>\n    <ion-item ion-item *ngFor="let match of group.matches">\n      <h2><strong>Home:</strong> {{ match.home_player.name }} <strong>Visitor:</strong> {{ match.visitor_player.name }}</h2>\n    </ion-item>\n  </ion-item-group>\n<!-- TODO: show contact info button if logged in (and \'mine\'?)-->\n<!-- TODO: show results on match list -->\n<!-- TODO: standings -->\n<!-- TODO: score entry button -->\n</ion-content>\n'/*ion-inline-end:"/Users/timothynott/Documents/code/Pedantech/round-robin-frontend/src/pages/flight/flight.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]) === "function" && _b || Object])
 ], FlightPage);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=flight.js.map
 
 /***/ })

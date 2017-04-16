@@ -13,7 +13,7 @@
   <!-- TODO: list flights, highlighting 'mine' if logged in -->
   <!-- TODO: my notifications if loged in -->
   <ion-list>
-    <button ion-item *ngFor="let flight of flights" (click)="flightTapped(flight)">
+    <button ion-item *ngFor="let flight of flights" (click)="flightTapped($event, flight)">
       {{ flight.name }}
     </button>  
   </ion-list>

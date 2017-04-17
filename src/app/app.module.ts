@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { FlightPage } from '../pages/flight/flight';
 
 import { FlightsService } from '../providers/flights-service';
+import { AuthService } from '../providers/auth-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';

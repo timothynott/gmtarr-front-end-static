@@ -3,13 +3,10 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import {FlightsService} from '../providers/flights-service';
-
 import { HomePage } from '../pages/home/home';
 
 @Component({
-  templateUrl: 'app.html',
-  providers: [FlightsService]
+  templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;

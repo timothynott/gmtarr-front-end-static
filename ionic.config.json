@@ -2,5 +2,11 @@
   "name": "Round-Robin-Frontend",
   "app_id": "",
   "v2": true,
-  "typescript": true
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://roundrobin.gmtatennis.org/api"
+    }
+  ]
 }

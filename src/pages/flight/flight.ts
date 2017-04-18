@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { FlightsService} from '../../providers/flights-service'
+import { AuthService} from '../../providers/auth-service'
 
 @Component({
     selector: "page-flight",
@@ -13,7 +14,7 @@ export class FlightPage{
     flightMatchesGrouped: any; //Array<{scheduledDate: string, matches: any}>;
     hiddenGroups: Array<boolean>;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private Flights: FlightsService) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, private Flights: FlightsService, public Auth: AuthService) {
       this.hiddenGroups = [false, false];
       this.flight = navParams.get('flight');
       this.flightMatchesGrouped = [];
@@ -42,7 +43,6 @@ export class FlightPage{
     };
 
     isGroupHidden(group) {
-      console.log(this.hiddenGroups[group]);
       return (this.hiddenGroups[group] === true);
     };
 
@@ -66,5 +66,6 @@ export class FlightPage{
         currMatches.push(value);
       });
     }
+
 
 }

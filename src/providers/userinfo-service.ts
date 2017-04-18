@@ -26,10 +26,11 @@ export class UserinfoService {
 
   getUserInfoFromAPI() {
     return new Promise((resolve, reject) => {
-      this.http.get('/api/flights')
+      this.http.get('/api/userinfo')
         .map(res => res.json())
         .subscribe(
           data => {
+            this.userinfo = data;
             resolve(data);
           },
           err => {

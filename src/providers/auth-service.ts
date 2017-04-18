@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, URLSearchParams } from '@angular/http';
+import { Http } from '@angular/http';
 import { UserinfoService } from './userinfo-service';
 import 'rxjs/add/operator/map';
 
@@ -54,7 +54,7 @@ export class AuthService {
     this.ssoCode = code;
   }
 
-  getToken(code, redirect_uri) {
+  requestToken(code, redirect_uri) {
     this.setSSOCode(code);
     this.http.get('/api/auth-token?code=' + code + '&redirect_uri=' + redirect_uri)
       .map(res => res.json())
@@ -65,6 +65,10 @@ export class AuthService {
         err => {
           console.log('Auth.getToken error:', err);
         });
+  }
+
+  getToken(){
+    return this.token.token;
   }
 
 

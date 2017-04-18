@@ -13,12 +13,12 @@
   <button ion-button large full clear (click)="toggleGroup(0)">
     Players
   </button>
-  <div [hidden]="isGroupHidden(0)">
-    <p [hidden]="Auth.checkToken()">To see contact info for this flight, you must <a (click)="Auth.login('flight:' + flight.id)">log in</a>.</p>
-    <p [hidden]="!Auth.checkToken()">If you are participating in this flight, contact info will appear below.</p>
+  <div *ngIf="!isGroupHidden(0)">
+    <p *ngIf="!Auth.checkToken()">To see contact info for this flight, you must <a (click)="Auth.login('flight:' + flight.id)">log in</a>.</p>
+    <p *ngIf="Auth.checkToken()">If you are participating in this flight, contact info will appear below.</p>
     <ion-list>
       <ion-item ion-item *ngFor="let flightPlayer of flightPlayers">
-        <h2>{{ flightPlayer.name }} ({{ flightPlayer.ntrp }})</h2>
+        <h2>{{ flightPlayer.name }} ({{ flightPlayer.ntrp }}) {{ flightPlayer.email }} {{ flightPlayer.phone }}</h2>
       </ion-item>
     </ion-list>
   </div>

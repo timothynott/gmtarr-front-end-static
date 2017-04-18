@@ -37,7 +37,7 @@ export class MyApp {
       // get any URL params into the appropriate service
       let params = this.getUrlParams();
       if (params.hasOwnProperty('code')) {
-        this.Auth.getToken(params['code'], window.location.href);
+        this.Auth.requestToken(params['code'], window.location.href);
       }
 
       this.statusBar.styleDefault();

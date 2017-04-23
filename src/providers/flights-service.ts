@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+
+import { AuthService } from './auth-service'
 
 /*
   Generated class for the FlightsService provider.
@@ -15,7 +17,7 @@ export class FlightsService {
   flightMatches: any;
   flightPlayers: any;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private Auth: AuthService) {
     //console.log('Hello FlightsService Provider');
     this.flights = [];
     this.flightMatches = [];
@@ -68,7 +70,11 @@ export class FlightsService {
     let flightPlayersTest = this.checkFlightPlayers(id);
     if(!flightPlayersTest) {
       return new Promise(resolve => {
-        this.http.get('/api/flights/' + id + '/players')
+        let authHeader = new Headers();
+        if(this.Auth.checkToken()) {
+          authHeader.append('Authorization', 'JWT ' + this.Auth.getToken())
+        }
+        this.http.get('/api/flights/' + id + '/players', {headers: authHeader})
           .map(res => res.json())
           .subscribe(data => {
             this.flightPlayers.push({flightId: id, players: data});
@@ -91,4 +97,7 @@ export class FlightsService {
     return false;
   }
 
+  hasContact(flightPlayer) {
+    return (typeof flightPlayer.email !== 'undefined');
+  }
 }

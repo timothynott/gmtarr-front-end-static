@@ -5,7 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { FlightPage } from '../pages/flight/flight';
+import { FlightPage, ScoreModal } from '../pages/flight/flight';
 
 import { FlightsService } from '../providers/flights-service';
 import { AuthService } from '../providers/auth-service';
@@ -18,7 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    FlightPage
+    FlightPage,
+    ScoreModal
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    FlightPage
+    FlightPage,
+    ScoreModal
   ],
   providers: [
     StatusBar,

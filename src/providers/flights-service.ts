@@ -4,12 +4,6 @@ import 'rxjs/add/operator/map';
 
 import { AuthService } from './auth-service'
 
-/*
-  Generated class for the FlightsService provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class FlightsService {
 
@@ -18,7 +12,6 @@ export class FlightsService {
   flightPlayers: any;
 
   constructor(private http: Http, private Auth: AuthService) {
-    //console.log('Hello FlightsService Provider');
     this.flights = [];
     this.flightMatches = [];
     this.flightPlayers = [];

@@ -40,8 +40,8 @@ export class MyApp {
         this.Auth.requestToken(params['code'], window.location.href);
       }
 
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      // this.statusBar.styleDefault();
+      // this.splashScreen.hide();
     });
   }
 

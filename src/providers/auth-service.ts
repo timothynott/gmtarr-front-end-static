@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { UserinfoService } from './userinfo-service';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -9,7 +8,7 @@ export class AuthService {
   authArgs: any;
   ssoCode: any = '';
 
-  constructor(public http: Http, private Userinfo: UserinfoService) {
+  constructor(public http: Http) {
     this.token = {};
     this.authArgs = {
         'client_id': 'roundrobin',
@@ -25,17 +24,17 @@ export class AuthService {
     return false;
   }
 
-  validateToken() {
-    // use a call to userinfo to see if our token is valid
-    this.Userinfo.getUserInfoFromAPI()
-      .then(value => {
-        // doesn't matter what the value is, the token is valid
-        return true;
-      })
-      .catch(err => {
-        return false;
-      })
-  }
+  // not being used -- causes conflict in UserInfo class validateToken() {
+  //   // use a call to userinfo to see if our token is valid
+  //   this.Userinfo.getUserInfoFromAPI()
+  //     .then(value => {
+  //       // doesn't matter what the value is, the token is valid
+  //       return true;
+  //     })
+  //     .catch(err => {
+  //       return false;
+  //     })
+  // }
 
   login(route: string) {
     let redirect_uri = [window.location.protocol, '//', window.location.host, window.location.pathname].join('');

@@ -10,29 +10,50 @@
 <ion-content padding>
   <h3>{{ flight.name }}</h3>
 <!-- TODO: list matches -->
-  <button ion-button large full clear (click)="toggleGroup(0)">
+  <button ion-button large full clear (click)="toggleItem(0)">
     Players
   </button>
-  <div *ngIf="!isGroupHidden(0)">
-    <p *ngIf="!Auth.checkToken()">To see contact info for this flight, you must <a (click)="Auth.login('flight:' + flight.id)">log in</a>.</p>
-    <p *ngIf="Auth.checkToken()">If you are participating in this flight, contact info will appear below.</p>
+  <div *ngIf="!isItemHidden(0)">
     <ion-list>
       <ion-item ion-item *ngFor="let flightPlayer of flightPlayers">
         <h2>{{ flightPlayer.name }} ({{ flightPlayer.ntrp }}) {{ flightPlayer.email }} {{ flightPlayer.phone }}</h2>
       </ion-item>
     </ion-list>
   </div>
-  <button ion-button large full clear (click)="toggleGroup(1)">
+  <button ion-button large full clear (click)="toggleItem(1)">
     Schedule
   </button>
-  <ion-item-group *ngFor="let group of flightMatchesGrouped" [hidden]="isGroupHidden(1)">
+  <ion-item-group *ngFor="let group of flightMatchesGroupedAndFiltered()" [hidden]="isItemHidden(1)">
     <ion-item-divider light>{{group.scheduledDate}}</ion-item-divider>
-    <ion-item ion-item *ngFor="let match of group.matches">
+    <ion-item *ngFor="let match of group.matches">
       <h2><strong>Home:</strong> {{ match.home_player.name }} <strong>Visitor:</strong> {{ match.visitor_player.name }}</h2>
     </ion-item>
   </ion-item-group>
-<!-- TODO: show contact info button if logged in (and 'mine'?)-->
 <!-- TODO: show results on match list -->
 <!-- TODO: standings -->
-<!-- TODO: score entry button -->
+<!-- TODO: score entry -->
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button color="primary" outline icon-left (click)="enterScore()" *ngIf="myPlayer.id">
+      <ion-icon color="secondary" name="ios-tennisball"></ion-icon>
+        Add score
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button color="secondary" outline icon-left (click)="toggleItem(2)" *ngIf="myPlayer.id">
+        <ion-icon color="primary" name="ios-eye-outline"></ion-icon>
+        <span *ngIf="!isItemHidden(2)">Show my matches</span>
+        <span *ngIf="isItemHidden(2)">Show all matches</span>
+      </button>
+    </ion-buttons>
+    <ion-buttons left>
+      <button ion-button right round icon-left (click)="Auth.login('flight:' + flight.id)" *ngIf="!myPlayer.id">
+        <ion-icon name="log-in"></ion-icon>
+        Login
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

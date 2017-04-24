@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the UserinfoService provider.
+import { AuthService } from './auth-service';
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class UserinfoService {
 
   userinfo: any;
+  myPlayers: any;
 
-  constructor(public http: Http) {
+  constructor(public http: Http, private Auth: AuthService) {
     this.userinfo = false;
+    this.myPlayers = false;
   }
 
   getUserInfo() {
@@ -38,4 +36,27 @@ export class UserinfoService {
           });
     });
   }
+
+  getMyPlayers(){
+    if(!this.myPlayers) {
+      return new Promise((resolve, reject) => {
+        let authHeader = new Headers();
+        authHeader.append('Authorization', 'JWT ' + this.Auth.getToken());
+        this.http.get('/api/players/mine', {headers: authHeader})
+          .map(res => res.json())
+          .subscribe(
+            data => {
+              this.myPlayers = data;
+              resolve(data);
+            },
+            err => {
+              reject(err);
+            });
+      });
+    }
+    else {
+      return Promise.resolve(this.myPlayers);
+    }
+  }
+
 }

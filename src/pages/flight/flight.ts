@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { FlightsService} from '../../providers/flights-service'
 import { AuthService} from '../../providers/auth-service'
 import { UserinfoService} from '../../providers/userinfo-service'
-
+import { ScoreModal } from './score'
 
 @Component({
     selector: "page-flight",
@@ -113,27 +113,5 @@ export class FlightPage{
   enterScore() {
     let modal = this.ModalCtrl.create(ScoreModal, {matches: this.myMatches, player: this.myPlayer});
     modal.present();
-  }
-}
-
-@Component({
-  templateUrl: "score.html"
-})
-export class ScoreModal{
-  matches: any;
-  player: any;
-  matchScore: any;
-  constructor(params: NavParams, public ViewCtrl: ViewController) {
-    this.matches = params.data.matches;
-    this.player = params.data.player;
-    this.matchScore = {
-      id: 0,
-      played_date: ''
-    };
-    console.log(this.matches);
-  }
-
-  dismiss() {
-    this.ViewCtrl.dismiss();
   }
 }

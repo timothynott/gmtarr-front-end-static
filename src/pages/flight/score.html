@@ -20,7 +20,31 @@
       </ion-select>
     </ion-item>
     <ion-item>
+      <ion-label>Match status</ion-label>
+      <ion-select [(ngModel)]="matchScore.status">
+        <ion-option *ngFor="let status of listStatus" [value]="status.data" >{{ status.display }}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
       <ion-label>Date played</ion-label>
+      <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="MMM D, YYYY" [(ngModel)]="matchScore.played_date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Score winner</ion-label>
+      <ion-input type="text" [value]="matchScore.scoreHome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Score loser</ion-label>
+      <ion-input type="text" [value]="matchScore.scoreVisitor"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Winning player</ion-label>
+      <ion-select [(ngModel)]="matchScore.winner">
+        <ion-option *ngFor="let player of listPlayers" [value]="player.id" >{{ player.name }}</ion-option>
+      </ion-select>
     </ion-item>
   </ion-list>
+  <button ion-button block color="primary" (click)="submit()">
+    word
+  </button>
 </ion-content>

@@ -5,8 +5,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { FlightPage, ScoreModal } from '../pages/flight/flight';
-
+import { FlightPage } from '../pages/flight/flight';
+import { ScoreModal } from '../pages/flight/score';
 import { FlightsService } from '../providers/flights-service';
 import { AuthService } from '../providers/auth-service';
 import { UserinfoService } from '../providers/userinfo-service';

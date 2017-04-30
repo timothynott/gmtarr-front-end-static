@@ -111,7 +111,20 @@ export class FlightPage{
   }
 
   enterScore(matchId) {
-    let modal = this.ModalCtrl.create(ScoreModal, {matches: this.myMatches, player: this.myPlayer, matchId: matchId});
-    modal.present();
+    let matchFound = false;
+    let that = this;
+    this.flightMatches.forEach(match => {
+      if(match.id == matchId) {
+        console.log("Found match by id:", matchId, match.id);
+        matchFound = true;
+        let modal = that.ModalCtrl.create(ScoreModal, {player: that.myPlayer, match: match});
+        modal.present();
+      }
+    }, that);
+    if (!matchFound) {
+      console.log("Did not find match by id:", matchId);
+    }
+
+
   }
 }

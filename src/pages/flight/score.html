@@ -12,39 +12,45 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <ion-list>
-    <ion-item>
-      <ion-label>Select a match</ion-label>
-      <ion-select [(ngModel)]="matchScore.id">
-        <ion-option *ngFor="let matchWeek of matches" [value]="matchWeek.matches[0].id" >{{ matchWeek.matches[0].descriptor }}</ion-option>
-      </ion-select>
+  <ion-list *ngIf="invalid()">
+    <ion-item *ngFor="let error of errors">
+      <ion-label style="overflow: auto; white-space: normal;">{{error}}</ion-label>
     </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      <strong>Home:</strong> {{ match.home_player.name }} <strong>Visitor:</strong> {{ match.visitor_player.name }}, week of {{ match.scheduled_date }}
+    </ion-list-header>
     <ion-item>
       <ion-label>Match status</ion-label>
-      <ion-select [(ngModel)]="matchScore.status">
+      <ion-select [(ngModel)]="match.status">
         <ion-option *ngFor="let status of listStatus" [value]="status.data" >{{ status.display }}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Date played</ion-label>
-      <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="MMM D, YYYY" [(ngModel)]="matchScore.played_date"></ion-datetime>
+      <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="MMM D, YYYY" [(ngModel)]="match.played_date"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>Score winner</ion-label>
-      <ion-input type="text" [value]="matchScore.scoreHome"></ion-input>
+      <ion-select [(ngModel)]="score[0]">
+        <ion-option *ngFor="let scoreOption of scoreOptionsHome" [value]="scoreOption.data" >{{ scoreOption.data }}</ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Score loser</ion-label>
-      <ion-input type="text" [value]="matchScore.scoreVisitor"></ion-input>
+      <ion-select [(ngModel)]="score[1]">
+        <ion-option *ngFor="let scoreOption of scoreOptionsVisitor" [value]="scoreOption.data" >{{ scoreOption.data }}</ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Winning player</ion-label>
-      <ion-select [(ngModel)]="matchScore.winner">
-        <ion-option *ngFor="let player of listPlayers" [value]="player.id" >{{ player.name }}</ion-option>
+      <ion-select [(ngModel)]="match.winner" (ngModelChange)="changeWinner($event)">
+        <ion-option *ngFor="let winner of listWinner" [value]="winner.data" >{{ winner.display }}</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
-  <button ion-button block color="primary" (click)="submit()">
-    word
+  <button ion-button block color="primary" (click)="dismiss()" [disabled]="invalid()">
+    Submit
   </button>
 </ion-content>

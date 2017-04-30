@@ -34,7 +34,7 @@ export class FlightsService {
 
   loadFlightMatches(id: number) {
     let flightMatchTest = this.checkFlightMatches(id);
-    if(!flightMatchTest) {
+    if(flightMatchTest.length == 0) {
       return new Promise((resolve, reject) => {
         this.http.get('/api/flights/' + id + '/matches')
           .map(res => res.json())
@@ -61,7 +61,7 @@ export class FlightsService {
         return element.matches;
       }
     });
-    return false;
+    return new Array();
   }
 
   loadFlightPlayers(id: number) {
@@ -93,6 +93,41 @@ export class FlightsService {
       }
     });
     return false;
+  }
+
+  updateMatch(match) {
+    return new Promise((resolve, reject) => {
+      let authHeader = new Headers();
+      let that = this;
+      let data = {
+        "status": match.status,
+        "score": match.score,
+        "winner": match.winner,
+        "played_date": match.played_date
+      }
+      if(this.Auth.checkToken()) {
+        authHeader.append('Authorization', 'JWT ' + this.Auth.getToken())
+      }
+      this.http.put('/api/matches/' + match.id, data, {headers: authHeader})
+        .map(res => res.json())
+        .subscribe(
+          data => {
+            // add data back to match
+            let flightMatches = this.checkFlightMatches(data.flight.id)
+            if(flightMatches.length > 0) {
+              flightMatches.forEach(flightMatch => {
+                if(flightMatch.id = match.id) {
+                  flightMatch.winner = match.winner;
+                  flightMatch.played_date = match.played_date;
+                  flightMatch.score = match.score;
+                  flightMatch.status = match.status;
+                  resolve();
+                }
+              });
+            }
+          }
+        );
+    });
   }
 
   hasContact(flightPlayer) {

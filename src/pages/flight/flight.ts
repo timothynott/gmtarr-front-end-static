@@ -118,13 +118,15 @@ export class FlightPage{
         console.log("Found match by id:", matchId, match.id);
         matchFound = true;
         let modal = that.ModalCtrl.create(ScoreModal, {player: that.myPlayer, match: match});
+        modal.onDidDismiss(data => {
+          this.Flights.updateMatch(match);
+        });
         modal.present();
       }
     }, that);
     if (!matchFound) {
       console.log("Did not find match by id:", matchId);
     }
-
-
   }
+
 }

@@ -46,7 +46,8 @@ export class ScoreModal{
     {data: 6},
     {data: 7},
     {data: 8},
-    {data: 9}
+    {data: 9},
+    {data: 10}
   ];
 
   constructor(params: NavParams, public ViewCtrl: ViewController, private Flights: FlightsService) {
@@ -73,8 +74,8 @@ export class ScoreModal{
           }
         case 'retired':
         case 'timed match':
-          if (winner == 11 && loser < 9) {
-            errors.push("The winner cannot score 11 unless the loser has at least 9");
+          if (winner == 11 && loser < 10) {
+            errors.push("The winner cannot score 11 unless the loser has at least 10");
           }
           if (winner < loser) {
             errors.push("Winner score must be higher than loser score unless the match is a double default: " + winner + "-" + loser);

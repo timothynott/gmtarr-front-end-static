@@ -35,13 +35,18 @@ export class FlightsService {
   loadFlightMatches(id: number) {
     let flightMatchTest = this.checkFlightMatches(id);
     if(!flightMatchTest) {
-      return new Promise(resolve => {
+      return new Promise((resolve, reject) => {
         this.http.get('/api/flights/' + id + '/matches')
           .map(res => res.json())
-          .subscribe(data => {
-            this.flightMatches.push({flightId: id, matches: data});
-            resolve(data);
-          });
+          .subscribe(
+            data => {
+              this.flightMatches.push({flightId: id, matches: data});
+              resolve(data);
+            },
+            err => {
+              console.log(err);
+              reject(err);
+            });
       });
     }
     else {

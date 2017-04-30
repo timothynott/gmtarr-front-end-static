@@ -49,7 +49,7 @@
       </button>
     </ion-buttons>
     <ion-buttons left>
-      <button ion-button color="danger" outline round icon-left (click)="Auth.login('flight:' + flight.id)" *ngIf="!myPlayer.id">
+      <button ion-button color="danger" outline round icon-left (click)="Auth.login('flight:' + flight.id)" *ngIf="!loggedIn">
         <ion-icon name="log-in"></ion-icon>
         Login
       </button>

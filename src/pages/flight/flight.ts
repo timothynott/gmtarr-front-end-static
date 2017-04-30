@@ -18,6 +18,7 @@ export class FlightPage{
   myPlayer: any;
   myMatches: any;
   myFilter: boolean;
+  loggedIn = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private Flights: FlightsService, public Auth: AuthService, private Userinfo: UserinfoService, private ModalCtrl: ModalController) {
     this.hiddenItems = [false, false, false];
@@ -37,6 +38,7 @@ export class FlightPage{
         this.groupFlightMatches();
         if(this.Auth.checkToken()) {
           this.Userinfo.getMyPlayers().then(players => {
+            this.loggedIn = true;
             players.forEach(player => {
               if(player.flight == this.flight.id) {
                 this.myPlayer = player;

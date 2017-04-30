@@ -110,8 +110,8 @@ export class FlightPage{
     });
   }
 
-  enterScore() {
-    let modal = this.ModalCtrl.create(ScoreModal, {matches: this.myMatches, player: this.myPlayer});
+  enterScore(matchId) {
+    let modal = this.ModalCtrl.create(ScoreModal, {matches: this.myMatches, player: this.myPlayer, matchId: matchId});
     modal.present();
   }
 }

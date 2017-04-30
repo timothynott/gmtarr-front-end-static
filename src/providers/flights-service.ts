@@ -95,6 +95,10 @@ export class FlightsService {
     return false;
   }
 
+  getMatchDescriptor(match, myPlayerId) {
+    return (match.home_player.id == myPlayerId ? "Home" : "Visiting") + " versus " + (match.home_player.id == myPlayerId ? match.visitor_player.name : match.home_player.name);
+  }
+
   hasContact(flightPlayer) {
     return (typeof flightPlayer.email !== 'undefined');
   }

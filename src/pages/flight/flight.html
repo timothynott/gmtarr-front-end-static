@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>{{ flight.name }}</h3>
+  <h1>{{ flight.name }}</h1>
 <!-- TODO: list matches -->
   <button ion-button large full clear (click)="toggleItem(0)">
     Players
@@ -27,7 +27,7 @@
     <ion-item-divider light>{{group.scheduledDate}}</ion-item-divider>
     <ion-item *ngFor="let match of group.matches">
       <h2><strong>Home:</strong> {{ match.home_player.name }} <strong>Visitor:</strong> {{ match.visitor_player.name }}</h2>
-      <h3 style="text-transform: capitalize;" *ngIf="match.played_date">{{ match.winner }} {{ match.score }}</h3>
+      <h2 style="text-transform: capitalize; color: green" *ngIf="match.played_date">{{ match.winner }} {{ match.score }}</h2>
       <button ion-button color="primary" outline icon-left item-right (click)="enterScore(match.id)" *ngIf="myPlayer.id == match.visitor_player.id || myPlayer.id == match.home_player.id">
         <ion-icon color="secondary" name="ios-tennisball"></ion-icon>
         Enter score

@@ -74,8 +74,8 @@ export class ScoreModal{
           }
         case 'retired':
         case 'timed match':
-          if (winner == 11 && loser < 10) {
-            errors.push("The winner cannot score 11 unless the loser has at least 10");
+          if (winner == 11 && loser < 9) {
+            errors.push("The winner cannot score 11 unless the loser has at least 9");
           }
           if (winner < loser) {
             errors.push("Winner score must be higher than loser score unless the match is a double default: " + winner + "-" + loser);

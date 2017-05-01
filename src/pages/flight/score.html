@@ -33,13 +33,13 @@
     </ion-item>
     <ion-item>
       <ion-label>Score winner</ion-label>
-      <ion-select [(ngModel)]="score[0]">
+      <ion-select [(ngModel)]="score[0]" interface="popover">
         <ion-option *ngFor="let scoreOption of scoreOptionsHome" [value]="scoreOption.data" >{{ scoreOption.data }}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Score loser</ion-label>
-      <ion-select [(ngModel)]="score[1]">
+      <ion-select [(ngModel)]="score[1]" interface="popover">
         <ion-option *ngFor="let scoreOption of scoreOptionsVisitor" [value]="scoreOption.data" >{{ scoreOption.data }}</ion-option>
       </ion-select>
     </ion-item>

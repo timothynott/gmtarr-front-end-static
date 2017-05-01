@@ -23,31 +23,31 @@ export class ScoreModal{
     {data: 'double default', display: 'Double Default'}
   ];
   scoreOptionsHome: any[] = [
-    {data: 0},
-    {data: 1},
-    {data: 2},
-    {data: 3},
-    {data: 4},
-    {data: 5},
-    {data: 6},
-    {data: 7},
-    {data: 8},
-    {data: 9},
+    {data: 11},
     {data: 10},
-    {data: 11}
+    {data: 9},
+    {data: 8},
+    {data: 7},
+    {data: 6},
+    {data: 5},
+    {data: 4},
+    {data: 3},
+    {data: 2},
+    {data: 1},
+    {data: 0}
   ];
   scoreOptionsVisitor: any[] = [
-    {data: 0},
-    {data: 1},
-    {data: 2},
-    {data: 3},
-    {data: 4},
-    {data: 5},
-    {data: 6},
-    {data: 7},
-    {data: 8},
+    {data: 10},
     {data: 9},
-    {data: 10}
+    {data: 8},
+    {data: 7},
+    {data: 6},
+    {data: 5},
+    {data: 4},
+    {data: 3},
+    {data: 2},
+    {data: 1},
+    {data: 0}
   ];
 
   constructor(params: NavParams, public ViewCtrl: ViewController, private Flights: FlightsService) {

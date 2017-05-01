@@ -8,6 +8,12 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-list *ngIf="ie">
+    <ion-item>
+    <ion-icon color="danger" name="nuclear" item-left></ion-icon>
+     Internet Explorer is not supported. Please use <a herf="https://browsehappy.com/">a different browser</a>.
+    </ion-item>
+  </ion-list>
   <h3>Flights</h3>
   <!-- TODO: show login button if logged out -->
   <!-- TODO: list flights, highlighting 'mine' if logged in -->
@@ -15,7 +21,7 @@
   <ion-list>
     <button ion-item *ngFor="let flight of flights" (click)="flightTapped($event, flight)">
       {{ flight.name }}
-    </button>  
+    </button>
   </ion-list>
-  
+
 </ion-content>

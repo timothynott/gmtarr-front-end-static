@@ -16,7 +16,7 @@
   <div *ngIf="!isItemHidden(0)">
     <ion-list>
       <ion-item ion-item *ngFor="let flightPlayer of flightPlayers">
-        <h2>{{ flightPlayer.name }} ({{ flightPlayer.ntrp }}) {{ flightPlayer.email }} {{ flightPlayer.phone }}</h2>
+        <h2>{{ flightPlayer.name }} ({{ flightPlayer.ntrp }}) <a href="mailto:{{ flightPlayer.email }}">{{ flightPlayer.email }}</a> <a href="tel:{{ flightPlayer.phone }}">{{ flightPlayer.phone }}</a></h2>
       </ion-item>
     </ion-list>
   </div>

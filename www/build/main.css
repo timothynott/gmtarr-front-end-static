@@ -24312,3 +24312,8 @@ ion-navbar.toolbar {
     padding-top: calc(16px + 20px);
   }
 }
+
+ion-label {
+  overflow: visible;
+  white-space: normal;
+}

@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { FlightPage } from '../pages/flight/flight';
 import { ScoreModal } from '../pages/flight/score';
 import { FlightsService } from '../providers/flights-service';
+import { LeaguesService } from '../providers/leagues-service';
 import { AuthService } from '../providers/auth-service';
 import { UserinfoService } from '../providers/userinfo-service';
 
@@ -37,6 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     FlightsService,
+    LeaguesService,
     AuthService,
     UserinfoService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

@@ -14,14 +14,18 @@
      Internet Explorer is not supported. Please use <a herf="https://browsehappy.com/">a different browser</a>.
     </ion-item>
   </ion-list>
-  <h3>Flights</h3>
-  <!-- TODO: show login button if logged out -->
-  <!-- TODO: list flights, highlighting 'mine' if logged in -->
-  <!-- TODO: my notifications if loged in -->
   <ion-list>
-    <button ion-item *ngFor="let flight of flights" (click)="flightTapped($event, flight)">
-      {{ flight.name }}
-    </button>
+    <div *ngFor="let league of leagues">
+      <h3>{{ league.name }}</h3>
+      <!-- TODO: show login button if logged out -->
+      <!-- TODO: list flights, highlighting 'mine' if logged in -->
+      <!-- TODO: my notifications if loged in -->
+      <ion-list>
+        <button ion-item *ngFor="let flight of league.flights" (click)="flightTapped($event, flight)">
+          {{ flight.name }}
+        </button>
+      </ion-list>
+    </div>
   </ion-list>
 
 </ion-content>
